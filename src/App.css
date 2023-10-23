@@ -1,7 +1,4 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -33,10 +30,52 @@
   }
 }
 
-.card {
-  padding: 2em;
+.super-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+.board-flop {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.container-table {
+  align-items: center;
+}
+
+.card {
+  width: 80px; /* Ajustez selon vos besoins */
+  height: 120px; /* Ajustez selon vos besoins */
+  margin: 0 10px; /* Espace entre les cartes */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Taille du '+' */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); /* Effet de flou pour le style glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère pour le style glassmorphism */
+}
+
+.card:not(.active):before {
+  content: "+";
+  position: absolute;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card:not(.active):hover {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.hand-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 12vh;
 }
