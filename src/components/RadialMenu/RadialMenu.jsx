@@ -73,6 +73,8 @@ function RadialMenu() {
     setCardClicked3,
     setCardClicked4,
     setCardClicked5,
+    setCardClicked6,
+    setCardClicked7,
     setCurrentCard,
   } = useContext(CardContext);
   const [selectedSuit, setSelectedSuit] = useState(null);
@@ -144,6 +146,20 @@ function RadialMenu() {
         setSelectedValue(null);
         setCurrentCard(0);
         break;
+      case 6:
+        setCardClicked6(card);
+        setSelectedSuit(null);
+        setStep(1);
+        setSelectedValue(null);
+        setCurrentCard(0);
+        break;
+      case 7:
+        setCardClicked7(card);
+        setSelectedSuit(null);
+        setStep(1);
+        setSelectedValue(null);
+        setCurrentCard(0);
+        break;
       default:
         console.log(`erreur`);
     }
@@ -153,16 +169,28 @@ function RadialMenu() {
     <div className="radialMenu">
       {step === 1 && (
         <div className="suitsMenu">
-          <button className="button-value" onClick={() => handleSuitClick("c")}>
+          <button
+            className="button-value club"
+            onClick={() => handleSuitClick("c")}
+          >
             ♣️
           </button>
-          <button className="button-value" onClick={() => handleSuitClick("d")}>
+          <button
+            className="button-value diamond"
+            onClick={() => handleSuitClick("d")}
+          >
             ♦️
           </button>
-          <button className="button-value" onClick={() => handleSuitClick("h")}>
+          <button
+            className="button-value heart"
+            onClick={() => handleSuitClick("h")}
+          >
             ♥️
           </button>
-          <button className="button-value" onClick={() => handleSuitClick("s")}>
+          <button
+            className="button-value spade"
+            onClick={() => handleSuitClick("s")}
+          >
             ♠️
           </button>
         </div>

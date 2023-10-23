@@ -14,6 +14,8 @@ function App() {
   const [cardClicked3, setCardClicked3] = useState(false);
   const [cardClicked4, setCardClicked4] = useState(false);
   const [cardClicked5, setCardClicked5] = useState(false);
+  const [cardClicked6, setCardClicked6] = useState(false);
+  const [cardClicked7, setCardClicked7] = useState(false);
   const [currentCard, setCurrentCard] = useState(0);
 
   return (
@@ -29,6 +31,10 @@ function App() {
         setCardClicked4,
         cardClicked5,
         setCardClicked5,
+        cardClicked6,
+        setCardClicked6,
+        cardClicked7,
+        setCardClicked7,
         currentCard,
         setCurrentCard,
       }}
