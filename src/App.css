@@ -44,6 +44,20 @@
   margin-top: 40px;
 }
 
+.board-flop .card {
+  position: relative;
+  width: 100px; /* ou toute autre taille que vous souhaitez */
+  height: 150px; /* ou toute autre taille que vous souhaitez */
+  overflow: hidden; /* Cela empêchera toute image débordante de se montrer */
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cela garantira que l'image couvre entièrement la div sans perdre ses proportions */
+}
+
 .container-table {
   align-items: center;
 }

@@ -50,3 +50,7 @@
   height: 90px;
   transform: translate(-50%, -50%);
 }
+
+.button-value {
+  margin: 15px;
+}

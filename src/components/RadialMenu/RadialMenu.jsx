@@ -65,65 +65,35 @@ import aceOfSpades from "../../assets/PNG-cards-1.3/ace_of_spades.png";
 import { CardContext } from "../../context/CardContext";
 
 function RadialMenu() {
-  const { cardClicked } = useContext(CardContext);
+  const {
+    cardClicked,
+    setCardClicked,
+    currentCard,
+    setCardClicked2,
+    setCardClicked3,
+    setCardClicked4,
+    setCardClicked5,
+    setCurrentCard,
+  } = useContext(CardContext);
   const [selectedSuit, setSelectedSuit] = useState(null);
+  const [selectedValue, setSelectedValue] = useState(null);
   const [step, setStep] = useState(1);
 
-  if (!cardClicked) return null;
+  if (currentCard === 0) return null;
 
-  const cards = [
-    { symbol: "C", value: "2", image: twoOfClubs },
-    { symbol: "C", value: "3", image: threeOfClubs },
-    { symbol: "C", value: "4", image: fourOfClubs },
-    { symbol: "C", value: "5", image: fiveOfClubs },
-    { symbol: "C", value: "6", image: sixOfClubs },
-    { symbol: "C", value: "7", image: sevenOfClubs },
-    { symbol: "C", value: "8", image: eightOfClubs },
-    { symbol: "C", value: "9", image: nineOfClubs },
-    { symbol: "C", value: "T", image: tenOfClubs },
-    { symbol: "C", value: "J", image: jackOfClubs },
-    { symbol: "C", value: "Q", image: queenOfClubs },
-    { symbol: "C", value: "K", image: kingOfClubs },
-    { symbol: "C", value: "A", image: aceOfClubs },
-    { symbol: "D", value: "2", image: twoOfDiamonds },
-    { symbol: "D", value: "3", image: threeOfDiamonds },
-    { symbol: "D", value: "4", image: fourOfDiamonds },
-    { symbol: "D", value: "5", image: fiveOfDiamonds },
-    { symbol: "D", value: "6", image: sixOfDiamonds },
-    { symbol: "D", value: "7", image: sevenOfDiamonds },
-    { symbol: "D", value: "8", image: eightOfDiamonds },
-    { symbol: "D", value: "9", image: nineOfDiamonds },
-    { symbol: "D", value: "T", image: tenOfDiamonds },
-    { symbol: "D", value: "J", image: jackOfDiamonds },
-    { symbol: "D", value: "Q", image: queenOfDiamonds },
-    { symbol: "D", value: "K", image: kingOfDiamonds },
-    { symbol: "D", value: "A", image: aceOfDiamonds },
-    { symbol: "H", value: "2", image: twoOfHearts },
-    { symbol: "H", value: "3", image: threeOfHearts },
-    { symbol: "H", value: "4", image: fourOfHearts },
-    { symbol: "H", value: "5", image: fiveOfHearts },
-    { symbol: "H", value: "6", image: sixOfHearts },
-    { symbol: "H", value: "7", image: sevenOfHearts },
-    { symbol: "H", value: "8", image: eightOfHearts },
-    { symbol: "H", value: "9", image: nineOfHearts },
-    { symbol: "H", value: "T", image: tenOfHearts },
-    { symbol: "H", value: "J", image: jackOfHearts },
-    { symbol: "H", value: "Q", image: queenOfHearts },
-    { symbol: "H", value: "K", image: kingOfHearts },
-    { symbol: "H", value: "A", image: aceOfHearts },
-    { symbol: "S", value: "2", image: twoOfSpades },
-    { symbol: "S", value: "3", image: threeOfSpades },
-    { symbol: "S", value: "4", image: fourOfSpades },
-    { symbol: "S", value: "5", image: fiveOfSpades },
-    { symbol: "S", value: "6", image: sixOfSpades },
-    { symbol: "S", value: "7", image: sevenOfSpades },
-    { symbol: "S", value: "8", image: eightOfSpades },
-    { symbol: "S", value: "9", image: nineOfSpades },
-    { symbol: "S", value: "T", image: tenOfSpades },
-    { symbol: "S", value: "J", image: jackOfSpades },
-    { symbol: "S", value: "Q", image: queenOfSpades },
-    { symbol: "S", value: "K", image: kingOfSpades },
-    { symbol: "S", value: "A", image: aceOfSpades },
+  const cardValues = [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "J",
+    "Q",
+    "K",
+    "A",
   ];
 
   const handleSuitClick = (suit) => {
@@ -131,30 +101,83 @@ function RadialMenu() {
     setStep(2);
   };
 
+  console.log(currentCard);
+
   const handleCardClick = (card) => {
     console.log("Carte sélectionnée :", card);
     setSelectedSuit(null);
-    setStep(1);
+    setSelectedValue(card);
+
+    switch (currentCard) {
+      case 1:
+        setCardClicked(card);
+        setSelectedSuit(null);
+        setStep(1);
+        setSelectedValue(null);
+        setCurrentCard(0);
+        break;
+      case 2:
+        setCardClicked2(card);
+        setSelectedSuit(null);
+        setStep(1);
+        setSelectedValue(null);
+        setCurrentCard(0);
+        break;
+      case 3:
+        setCardClicked3(card);
+        setSelectedSuit(null);
+        setStep(1);
+        setSelectedValue(null);
+        setCurrentCard(0);
+        break;
+      case 4:
+        setCardClicked4(card);
+        setSelectedSuit(null);
+        setStep(1);
+        setSelectedValue(null);
+        setCurrentCard(0);
+        break;
+      case 5:
+        setCardClicked5(card);
+        setSelectedSuit(null);
+        setStep(1);
+        setSelectedValue(null);
+        setCurrentCard(0);
+        break;
+      default:
+        console.log(`erreur`);
+    }
   };
 
   return (
     <div className="radialMenu">
       {step === 1 && (
         <div className="suitsMenu">
-          <button onClick={() => handleSuitClick("C")}>♣️</button>
-          <button onClick={() => handleSuitClick("D")}>♦️</button>
-          <button onClick={() => handleSuitClick("H")}>♥️</button>
-          <button onClick={() => handleSuitClick("S")}>♠️</button>
+          <button className="button-value" onClick={() => handleSuitClick("c")}>
+            ♣️
+          </button>
+          <button className="button-value" onClick={() => handleSuitClick("d")}>
+            ♦️
+          </button>
+          <button className="button-value" onClick={() => handleSuitClick("h")}>
+            ♥️
+          </button>
+          <button className="button-value" onClick={() => handleSuitClick("s")}>
+            ♠️
+          </button>
         </div>
       )}
 
       {step === 2 && (
         <div className="cardsMenu">
-          {cards
-            .filter((card) => card.symbol === selectedSuit)
-            .map((card) => (
-              <button key={card.value} onClick={() => handleCardClick(card)}>
-                <img src={card.image} alt={`${card.value} of ${card.symbol}`} />
+          {step === 2 &&
+            cardValues.map((value, index) => (
+              <button
+                className="button-value"
+                key={index}
+                onClick={() => handleCardClick(`${value}${selectedSuit}`)}
+              >
+                {value}
               </button>
             ))}
         </div>

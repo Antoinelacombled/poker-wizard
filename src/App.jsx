@@ -10,9 +10,29 @@ import { CardContext } from "./context/CardContext";
 
 function App() {
   const [cardClicked, setCardClicked] = useState(false);
+  const [cardClicked2, setCardClicked2] = useState(false);
+  const [cardClicked3, setCardClicked3] = useState(false);
+  const [cardClicked4, setCardClicked4] = useState(false);
+  const [cardClicked5, setCardClicked5] = useState(false);
+  const [currentCard, setCurrentCard] = useState(0);
 
   return (
-    <CardContext.Provider value={{ cardClicked, setCardClicked }}>
+    <CardContext.Provider
+      value={{
+        cardClicked,
+        setCardClicked,
+        cardClicked2,
+        setCardClicked2,
+        cardClicked3,
+        setCardClicked3,
+        cardClicked4,
+        setCardClicked4,
+        cardClicked5,
+        setCardClicked5,
+        currentCard,
+        setCurrentCard,
+      }}
+    >
       <div className="super-container">
         <div className="container-table">
           <Statistics />
