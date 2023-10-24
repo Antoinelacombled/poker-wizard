@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { calculateEquity } from "poker-odds";
 
 import "./RadialMenu.css";
 
@@ -79,6 +80,7 @@ function RadialMenu() {
   } = useContext(CardContext);
   const [selectedSuit, setSelectedSuit] = useState(null);
   const [selectedValue, setSelectedValue] = useState(null);
+  const [equity, setEquity] = useState(0);
   const [step, setStep] = useState(1);
 
   if (currentCard === 0) return null;

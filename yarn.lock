@@ -1751,6 +1751,11 @@ picocolors@^1.0.0:
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
 
+poker-odds@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/poker-odds/-/poker-odds-1.0.1.tgz#74d068905f8eaa436f3c1cb90fde5190519935ad"
+  integrity sha512-23EbEsyO+DHeXRkKbmdOWMdj+QInfc4AjL7PhnXtDc1VIQnfzK6jbY4sT75H6KSF6sFOPSKyX9tb0hqcJaAWqA==
+
 pokersolver@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/pokersolver/-/pokersolver-2.1.4.tgz#58934f3dad1dc597c44e80474bc82e9626790ccc"
